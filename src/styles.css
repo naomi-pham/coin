@@ -1,0 +1,33 @@
+:root {
+  --clr-dark: #283618;
+  --clr-light: #fefae0;
+  --clr-accent: #dda15e;
+  --clr-neutral: #bc6c25;
+}
+
+body {
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+#root {
+  margin-top: 1.5rem;
+}
+
+h1 {
+  color: var(--clr-accent);
+}
+
+@media (min-width: 600px) {
+  body {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    width: 50%;
+  }
+}
