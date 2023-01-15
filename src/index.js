@@ -9,9 +9,10 @@ import { render } from "react-dom";
   // shadowRoot.innerHTML = "Hello";
   // console.log("hello");
 
-  const container = document.getElementById("root");
-  const shadow = container.attachShadow({ mode: "open" });
-  const renderIn = document.createElement("div");
-  shadow.appendChild(renderIn);
-  render(<App />, renderIn);
+  const container = document.getElementsByClassName("root");
+  for (let i = 0; i < container.length; i++) {
+    const renderIn = document.createElement("div");
+    container[i].attachShadow({ mode: "open" }).appendChild(renderIn);
+    render(<App />, renderIn);
+  }
 })();
