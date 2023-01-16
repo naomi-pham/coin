@@ -8,7 +8,7 @@ module.exports = (env, argv) => {
     entry: "./src/index.js",
     output: {
       filename: "bundle.js",
-      path: path.join(__dirname, `build/${argv.mode}/${timeStamp}`),
+      path: path.join(__dirname, `build`),
     },
     plugins: [
       new HtmlWebpackPlugin({

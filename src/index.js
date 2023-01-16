@@ -4,6 +4,8 @@ import App from "./App";
 import { render } from "react-dom";
 
 // Shadow Dom under an element with class "root"
+debugger;
+
 const container = document.getElementsByClassName("root");
 for (let i = 0; i < container.length; i++) {
   let renderIn = document.createElement("div");
