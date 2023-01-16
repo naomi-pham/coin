@@ -82,6 +82,8 @@ const App = () => {
           typical cartoon tradition he prepares the nasty rodents a comical
           revenge.
         </p>
+        <slot name="username" style={myStyle.slot}></slot>
+        <slot name="date" style={myStyle.slot}></slot>
       </article>
     </section>
   );
