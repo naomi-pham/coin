@@ -8,7 +8,7 @@ debugger;
 
 const container = document.getElementsByClassName("root");
 for (let i = 0; i < container.length; i++) {
-  let renderIn = document.createElement("div");
+  let renderIn = container[i].createElement("div");
   container[i].attachShadow({ mode: "open" }).appendChild(renderIn);
   render(<App />, renderIn);
 }
