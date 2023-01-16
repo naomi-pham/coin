@@ -4,13 +4,16 @@ import App from "./App";
 import { render } from "react-dom";
 
 // Shadow Dom under an element with class "root"
-debugger;
+// debugger;
 
 const container = document.getElementsByClassName("root");
 for (let i = 0; i < container.length; i++) {
-  let renderIn = document.createElement("div");
-  container[i].attachShadow({ mode: "open" }).appendChild(renderIn);
-  render(<App />, renderIn);
+  if (!container[i].classList.contains("root-rendered")) {
+    let renderIn = document.createElement("div");
+    container[i].attachShadow({ mode: "open" }).appendChild(renderIn);
+    container[i].classList.add("root-rendered");
+    render(<App />, renderIn);
+  }
 }
 
 // Shadow Dom inside <show-video> web component
