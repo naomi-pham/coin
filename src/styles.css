@@ -1,23 +1,27 @@
 :root {
-  --clr-dark: #283618;
-  --clr-light: #fefae0;
-  --clr-accent: #dda15e;
-  --clr-neutral: #bc6c25;
+  --clr-dark: #111827;
+  --clr-light: #f3f4f6;
+  --clr-accent: #84cc16;
+
+  --fs-base: 0.875rem;
 }
 
 body {
-  color: var(--clr-light);
-  background-color: var(--clr-dark);
   margin: 2rem auto;
   padding: 0 2rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  font-size: var(--fs-base);
 }
 
-.root {
-  margin-bottom: 1.5rem;
-}
-
-h1 {
-  color: var(--clr-accent);
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 600px) {

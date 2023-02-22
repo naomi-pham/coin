@@ -1,33 +1,18 @@
 import "./styles.css";
 import React from "react";
 import App from "./App";
-import { render } from "react-dom";
-
-// Shadow Dom under an element with class "root"
-// debugger;
+import { createRoot } from "react-dom/client";
 
 const container = document.getElementsByClassName("root");
+
 for (let i = 0; i < container.length; i++) {
+  console.log(container[i].dataset.coin);
   if (!container[i].classList.contains("root-rendered")) {
-    let renderIn = document.createElement("div");
-    container[i].attachShadow({ mode: "open" }).appendChild(renderIn);
+    let renderIn = container[i].attachShadow({ mode: "open" });
     container[i].classList.add("root-rendered");
-    render(<App />, renderIn);
+    let coinName = container[i].dataset.coin;
+
+    const root = createRoot(renderIn);
+    root.render(<App coinName={coinName} />);
   }
 }
-
-// Shadow Dom inside <show-video> web component
-customElements.define(
-  "show-video",
-  class extends HTMLElement {
-    connectedCallback() {
-      const shadow = this.attachShadow({ mode: "open" });
-      let renderIn = document.createElement("div");
-      shadow.appendChild(renderIn);
-      render(<App />, renderIn);
-    }
-  }
-);
-
-// https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
-// connectedCallback: Invoked each time the custom element is appended into a document-connected element.
